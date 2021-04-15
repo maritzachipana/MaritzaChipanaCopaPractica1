@@ -1,39 +1,26 @@
-//septimo problema NUmero de caracteres similares
-function charequal(a, b) {
-    var sum = 0;
-    for (var i = 0; i < a.length; i++) {
-        if (b == a.charAt(i))
-            sum = sum + 1;
-    }
-    return sum;
-}
-function numCar(a, b) {
-    var conC = 0;
-    var l = 0;
-    var ll = 0;
-    for (var i = 0; i < a.length; i++) {
-        if (i == 0) {
-            l = charequal(a, a.charAt(i));
-            ll = charequal(b, a.charAt(i));
-            conC = conC + Math.min(l, ll);
-        }
-        else {
-            for (var j = 0; j < i; j++) {
-                if (a.charAt(j) != a.charAt(i)) {
-                    if (j == i - 1) {
-                        l = charequal(a, a.charAt(i));
-                        ll = charequal(b, a.charAt(i));
-                        conC = conC + Math.min(l, ll);
-                    }
-                }
-                else {
-                    if (a.charAt(j) == a.charAt(i)) {
-                        break;
-                    }
-                }
-            }
+//problema 8 N numeros primos
+function primo(num) {
+    for (var i = 2; i < num; i++) {
+        if (num % i == 0) {
+            return false;
         }
     }
-    return conC;
+    return true;
 }
-console.log(numCar("abca", "xyzbac"));
+function numPrimos(v) {
+    var nump = [];
+    var s = 0;
+    var c = 2;
+    while (true) {
+        if (s == v) {
+            break;
+        }
+        else if (primo(c) == true) {
+            nump.push(c);
+            s++;
+        }
+        c++;
+    }
+    return nump;
+}
+console.log(numPrimos(9));
