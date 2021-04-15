@@ -1,16 +1,23 @@
-//quinto Problema Estatuas de diferentes tamaños
-function estatuas(b) {
-    var a = b.sort(function (y, z) { return y - z; });
-    var can = b.length;
-    var numE = 0;
-    var con = a[0];
-    for (var i = 0; i < can; i++) {
-        while (a[i] != con) {
-            con++;
-            numE = numE + 1;
+//sexto Problema Costo total de las habitaciones
+function cosroom(c) {
+    var can = 0;
+    var ho = c.length - 1;
+    for (var i = 0; i < c.length; i++) {
+        for (var j = 0; j < c[i].length; j++) {
+            if (i != ho) {
+                if (c[i][j] != 0) {
+                    if (c[i + 1][j] != 0) {
+                        can = can + c[i][j];
+                    }
+                }
+            }
+            else {
+                if (c[i][j] != 0) {
+                    can = can + c[i][j];
+                }
+            }
         }
-        con++;
     }
-    return numE;
+    return can;
 }
-console.log(estatuas([6, 2, 3, 8]));
+console.log(cosroom([[0, 1, 1, 2], [0, 5, 0, 0], [2, 0, 3, 3]]));
