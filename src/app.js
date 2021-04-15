@@ -1,11 +1,16 @@
-//segundo ejercicio dada una cadena mostrarla invertida
-function inverCadena(cadena) {
-    var l = cadena.length;
-    var cadenaInver = "";
-    while (l >= 0) {
-        cadenaInver = cadenaInver + cadena.charAt(l);
-        l--;
+//tercer ejercicio Dada una cadena, comprobar si es palíndromo
+function palindromo(caden) {
+    var m = caden.length;
+    var cadin = "";
+    while (m >= 0) {
+        cadin = cadin + caden.charAt(m);
+        m--;
     }
-    return cadenaInver;
+    if (caden == cadin) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
-console.log(inverCadena("this is a sample string"));
+console.log(palindromo("bangnab"));
