@@ -1,15 +1,16 @@
-//cuarto ejercicio, dado un array de enteros encontrar
-//un par de elementos adyacentes
-function adyacen(a:Array<number>){
-    let j:number=a.length;
-    let ni=0;
-    let o=1;
-    for (let i=0; i<j;i++){
-        let may:number=a[i]*a[i+1];
-        if (may>ni){
-            ni=may;
+//quinto Problema Estatuas de diferentes tamaños
+function estatuas(b:number[]){
+    let a:number[]=b.sort((y,z) => y-z);
+    let can = b.length;
+    let numE=0;
+    let con=a[0];
+    for (let i=0; i<can; i++){
+        while(a[i]!=con){
+            con++;
+            numE=numE+1;
         }
+        con++;
     }
-    return ni;
+    return numE;
 }
-console.log(adyacen ([3,6,-2,-5,7,3]))
+console.log(estatuas([6,2,3,8]))
