@@ -1,10 +1,12 @@
-//primer ejercicio PRIMO
-function primo(num:number){
-    for(let i:number=2; i < num;i++){
-        if(num % i ==0){
-            return false;
-        }
+//segundo ejercicio dada una cadena mostrarla invertida
+function inverCadena(cadena:string){
+    let l:number=cadena.length;
+    let cadenaInver="";
+    while (l>=0){
+        cadenaInver = cadenaInver + cadena.charAt(l);
+        l--;
     }
-    return true;
+    return cadenaInver;
 }
-console.log(primo(10))
+console.log(inverCadena("this is a sample string"))
+
