@@ -1,29 +1,28 @@
-//problema 8 N numeros primos
-function primo(num:number){
-    for(let i:number=2; i < num;i++){
-        if(num % i ==0){
+//problema 10 IPV4
+function ipv4(a:string){
+    var df:string = "";
+    var fd:number = 0;
+    for(let i=0; i<a.length; i++){
+        if(a.charAt(0) != "." && parseInt(a.charAt(0)) != 0){
+            if(a.charAt(i) != "."){
+                df = df + a.charAt(i);
+            }
+            else{
+                fd = parseInt(df);
+                if (fd <= 255 && fd >=0){
+                    df = "";
+                    fd = 0;
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        else{
             return false;
         }
     }
     return true;
 }
-function numPrimos(v:number){
-    var nump = [];
-    var s:number = 0;
-    let c:number = 2;
-    while(true){
-        if(s==v){
-            break;
-        }
-        else
-        if(primo(c) == true){
-            nump.push(c);
-            s++;
-        }
-        c++;
-    }
-    return nump;
-    }
-    
-    console.log(numPrimos(9))
+console.log(ipv4(".16.254.0"))
 
